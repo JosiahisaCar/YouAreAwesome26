@@ -27,12 +27,16 @@ struct ContentView: View {
             Spacer()
             
             Button("Press me!") {
-                if message == "You are Awesome!"{
-                    message = "You are Great!"
-                    imageString = "hand.thumbsup"
+                let message1 = "You are Awesome"
+                let message2 = "You are Great"
+                let image1 = "sun.max.fill"
+                let image2 = "hand.thumbsup"
+                if message == message1{
+                    message = message2
+                    imageString = image2
                 } else {
-                    message = "You are Awesome!"
-                    imageString = "sun.max.fill"
+                    message = message1
+                    imageString = image1
                 }
             }
             .buttonStyle(.borderedProminent)
