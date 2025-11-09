@@ -15,18 +15,24 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-            Spacer()
+           
+            Text(message)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundStyle(.red)
+                .multilineTextAlignment(.center)
+                .frame(height: 130)
+                .minimumScaleFactor(0.5)
+                .animation(.easeInOut(duration: 0.15), value: message)
+            
             Image(imageName)
                 .resizable()
                 .scaledToFit()
                 .frame(minWidth: 300, minHeight: 300)
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .shadow(radius: 30)
+                .animation(.default, value: imageName)
             
-            Text(message)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundStyle(.red)
             Spacer()
             
             Button("Show Message") {
@@ -34,7 +40,8 @@ struct ContentView: View {
                                 "Keep going!",
                                 "You're doing great!",
                                 "You're amazing!",
-                                "You're a legend!"]
+                                "You're a legend!",
+                "Keep shining! Just like the amazing star that you are!"]
                 message = messages[messageNumber]
                 messageNumber += 1
                 if messageNumber == messages.count{
