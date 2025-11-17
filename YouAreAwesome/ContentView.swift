@@ -42,17 +42,13 @@ struct ContentView: View {
                                 "You're amazing!",
                                 "You're a legend!",
                 "Keep shining! Just like the amazing star that you are!"]
-                message = messages[messageNumber]
-                messageNumber += 1
-                if messageNumber == messages.count{
-                    messageNumber = 0
-                }
-                imageName = "Image\(imageNumber)"
-                imageNumber += 1
+                message = messages[Int.random(in: 1...messages.count-1)]
                 
-                if imageNumber > 9 {
-                    imageNumber = 0
-                }
+                imageName = "Image\(Int.random(in: 1...9))"
+                
+                
+               
+                
                 print(imageNumber)
             }
             .buttonStyle(.borderedProminent)
